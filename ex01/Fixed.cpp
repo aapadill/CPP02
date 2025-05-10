@@ -51,25 +51,21 @@ Fixed::~Fixed()
 
 int Fixed::getRawBits() const
 {
-    // std::cout << "getRawBits member function called" << std::endl;
     return _raw_bits;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-    // std::cout << "setRawBits member function called" << std::endl;
     _raw_bits = raw;
 }
 
 float Fixed::toFloat() const
 {
-	// std::cout << "toFloat member function called" << std::endl;
-	return (float)_raw_bits / (1 << _fractional_bits); //change
+	return static_cast<float>(_raw_bits) / (1 << _fractional_bits);
 }
 
 int Fixed::toInt() const
 {
-	// std::cout << "toInt member function called" << std::endl;
 	return _raw_bits >> _fractional_bits;
 }
 
