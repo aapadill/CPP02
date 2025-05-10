@@ -1,11 +1,12 @@
 C++ = c++
 STD = -std=c++98
 C++_FLAGS = -Wall -Wextra -Werror
-INFILES =	main.cpp
+INFILES =	Fixed.cpp \
+			main.cpp \
 
 OBJFILES = $(INFILES:.cpp=.o)
 
-NAME = mfciocf 
+NAME = my_first_class_in_OCF
 
 all: $(NAME)
 
