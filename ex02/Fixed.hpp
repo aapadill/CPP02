@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:01:48 by aapadill          #+#    #+#             */
-/*   Updated: 2025/05/10 19:45:08 by aapadill         ###   ########.fr       */
+/*   Updated: 2025/05/10 19:44:34 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,33 @@ class Fixed
 		float	toFloat(void) const;
 		int		toInt(void) const;
 
+		//comparison operators
+		bool	operator>(const Fixed& other)  const;
+		bool	operator<(const Fixed& other)  const;
+		bool	operator>=(const Fixed& other) const;
+		bool	operator<=(const Fixed& other) const;
+		bool	operator==(const Fixed& other) const;
+		bool	operator!=(const Fixed& other) const;
+
+		//arithmetic operators
+		Fixed	operator+(const Fixed& other) const;
+		Fixed	operator-(const Fixed& other) const;
+		Fixed	operator*(const Fixed& other) const;
+		Fixed	operator/(const Fixed& other) const;
+
+		//increment / decrement
+		Fixed	&operator++();
+		Fixed	operator++(int);
+		Fixed	&operator--();
+		Fixed	operator--(int);
+
+		//min / max
+		static Fixed	&min(Fixed& a, Fixed& b);
+		static const Fixed	&min(const Fixed& a, const Fixed& b);
+		static Fixed	&max(Fixed& a, Fixed& b);
+		static const Fixed	&max(const Fixed& a, const Fixed& b);
+
+	
 	private:
 		int					_raw_bits;
 		static const int	_fractional_bits = 8;

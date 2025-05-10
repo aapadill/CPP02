@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:01:48 by aapadill          #+#    #+#             */
-/*   Updated: 2025/03/28 13:01:49 by aapadill         ###   ########.fr       */
+/*   Updated: 2025/05/10 19:45:24 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 	public:
 		Fixed(); //default constructor
 		Fixed(const Fixed &other); //copy constructor
-		Fixed &operator=(const Fixed &other); //assignment operator
+		Fixed	&operator=(const Fixed &other); //assignment operator
 		~Fixed(); //destructor
 
 		int		getRawBits(void) const;
