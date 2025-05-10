@@ -13,11 +13,10 @@
 #pragma once
 #include <iostream>
 
-
+/* orthodox canonical form marked with comments*/
 class Fixed
 {
 	public:
-		/* orthodox canonical form */
 		Fixed(); //default constructor
 		Fixed(const Fixed &other); //copy constructor
 		Fixed &operator=(const Fixed &other); //assignment operator
@@ -30,4 +29,3 @@ class Fixed
 		int					_raw_bits;
 		static const int	_fractional_bits = 8;
 };
-

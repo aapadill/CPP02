@@ -16,17 +16,20 @@ Fixed::Fixed() : _raw_bits(0) {
     std::cout << "Default constructor called" << std::endl;
 }
 
+//_raw_bits = other._raw_bits; //replazable in a)
+//subject implementation
 Fixed::Fixed(const Fixed& other) {
     std::cout << "Copy constructor called" << std::endl;
-	//_raw_bits = other._raw_bits;
-    *this = other; // Subject implementation
+    *this = other; //a)
 }
 
+
+//_raw_bits = other._raw_bits; //replazable in b)
+//subject implementation
 Fixed& Fixed::operator=(const Fixed& other) {
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
-        //_raw_bits = other._raw_bits;
-		_raw_bits = other.getRawBits(); // Subject implementation
+		_raw_bits = other.getRawBits(); //b)
     return *this;
 }
 
