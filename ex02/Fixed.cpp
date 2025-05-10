@@ -69,52 +69,52 @@ int Fixed::toInt() const
 }
 
 //comparison operators
-bool Fixed::operator>(const Fixed& other)  const
+bool Fixed::operator>(const Fixed &other)  const
 {
 	return _raw_bits >  other._raw_bits;
 }
 
-bool Fixed::operator<(const Fixed& other)  const
+bool Fixed::operator<(const Fixed &other)  const
 {
 	return _raw_bits <  other._raw_bits;
 }
 
-bool Fixed::operator>=(const Fixed& other) const
+bool Fixed::operator>=(const Fixed &other) const
 {
 	return _raw_bits >= other._raw_bits;
 }
 
-bool Fixed::operator<=(const Fixed& other) const
+bool Fixed::operator<=(const Fixed &other) const
 {
 	return _raw_bits <= other._raw_bits;
 }
 
-bool Fixed::operator==(const Fixed& other) const
+bool Fixed::operator==(const Fixed &other) const
 {
 	return _raw_bits == other._raw_bits;
 }
 
-bool Fixed::operator!=(const Fixed& other) const
+bool Fixed::operator!=(const Fixed &other) const
 {
 	return _raw_bits != other._raw_bits;
 }
 
 //arithmetic operators
-Fixed Fixed::operator+(const Fixed& other) const
+Fixed Fixed::operator+(const Fixed &other) const
 {
 	Fixed result;
 	result._raw_bits = _raw_bits + other._raw_bits;
 	return result;
 }
 
-Fixed Fixed::operator-(const Fixed& other) const
+Fixed Fixed::operator-(const Fixed &other) const
 {
 	Fixed result;
 	result._raw_bits = _raw_bits - other._raw_bits;
 	return result;
 }
 
-Fixed Fixed::operator*(const Fixed& other) const
+Fixed Fixed::operator*(const Fixed &other) const
 {
 	Fixed result;
 	long long tmp = static_cast<long long>(_raw_bits) * other._raw_bits;
@@ -122,7 +122,7 @@ Fixed Fixed::operator*(const Fixed& other) const
 	return result;
 }
 
-Fixed Fixed::operator/(const Fixed& other) const
+Fixed Fixed::operator/(const Fixed &other) const
 {
 	Fixed result;
 	long long tmp = (static_cast<long long>(_raw_bits) << _fractional_bits) / other._raw_bits;
@@ -131,7 +131,7 @@ Fixed Fixed::operator/(const Fixed& other) const
 }
 
 //increment / decrement
-Fixed& Fixed::operator++()
+Fixed &Fixed::operator++()
 {
 	++_raw_bits;
 	return *this;
@@ -144,7 +144,7 @@ Fixed Fixed::operator++(int)
 	return old;
 }
 
-Fixed& Fixed::operator--()
+Fixed &Fixed::operator--()
 {
 	--_raw_bits;
 	return *this;
@@ -158,22 +158,22 @@ Fixed Fixed::operator--(int)
 }
 
 //min / max
-Fixed& Fixed::min(Fixed& a, Fixed& b)
+Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
 	return (a < b ? a : b);
 }
 
-const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
 	return (a < b ? a : b);
 }
 
-Fixed& Fixed::max(Fixed& a, Fixed& b)
+Fixed &Fixed::max(Fixed &a, Fixed &b)
 {
 	return (a > b ? a : b);
 }
 
-const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
 	return (a > b ? a : b);
 }
